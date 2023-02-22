@@ -1,13 +1,13 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Grabby",
     "description": "Description for the extension",
     "version": "1.0",
-    "content_scripts": [
-      {
-        "js": [
-          "script.js"
-        ]
-      }
-    ]
+    "permissions": ["activeTab", "scripting"],
+    "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Grabby"
   }
+}
