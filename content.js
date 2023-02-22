@@ -1,12 +1,4 @@
-barDiv = document.createElement('div');
-barDiv.innerHTML = "Grabby v1.0";
-barDiv.style.position = 'fixed';
-barDiv.style.top = '0';
-barDiv.style.zIndex = '9999';
-barDiv.style.width = '100%';
-barDiv.style.backgroundColor = 'black';
-barDiv.style.color = 'white';
-barDiv.style.height = '50px';
-barDiv.style.textAlign = 'center';
-document.body.appendChild(barDiv);
-alert('hello world');
+fetch(chrome.runtime.getURL('/grabby.html')).then(r => r.text()).then(html => {
+  document.body.insertAdjacentHTML('beforeend', html);
+});
+console.log('made it to the end of script');

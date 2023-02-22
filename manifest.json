@@ -9,5 +9,9 @@
   },
   "action": {
     "default_title": "Grabby"
-  }
+  },
+  "web_accessible_resources": [{
+        "resources": ["grabby.html"],
+        "matches": ["<all_urls>"]
+    }]
 }
