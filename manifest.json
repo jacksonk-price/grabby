@@ -3,7 +3,7 @@
     "name": "Grabby",
     "description": "Description for the extension",
     "version": "1.0",
-    "permissions": ["activeTab", "scripting"],
+    "permissions": ["activeTab", "scripting", "downloads"],
     "background": {
     "service_worker": "background.js"
   },
