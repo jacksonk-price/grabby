@@ -1,0 +1,13 @@
+{
+    "manifest_version": 1,
+    "name": "Grabby",
+    "description": "Description for the extension",
+    "version": "1.0",
+    "content_scripts": [
+      {
+        "js": [
+          "script.js"
+        ]
+      }
+    ]
+  }
