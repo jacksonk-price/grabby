@@ -4,13 +4,17 @@
     "description": "Description for the extension",
     "version": "1.0",
     "permissions": ["activeTab", "scripting", "downloads"],
-    "background": {
-    "service_worker": "background.js"
-  },
-  "action": {
-    "default_title": "Grabby"
-  },
-  "web_accessible_resources": [{
+    "action": {
+        "default_title": "Grabby",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "web_accessible_resources": [{
         "resources": ["grabby.html"],
         "matches": ["<all_urls>"]
     }]
