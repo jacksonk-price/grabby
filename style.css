@@ -1,9 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
+:root{
+    --background: #fdffd6;
+    --red-sand: #f78c5e;
+    --red-sand-light: rgba(247,140,94,.99);
+    --green: #7be5ce;
+    --green-hover: #8ceddb;
+    --yellow: #f8e14f;
+    --purple: #b4acfb;
+    --light-blue: #38bdf8;
+    --black: #171717;
+    --dark-purple: #5d49f3;
+    --error: red;
+    --error-hover: #f33;
+    --white: #fff;
+    --dark-blue: #0A2647;
+}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }
 
 .grabby-container {
@@ -16,29 +39,45 @@
 }
 
 .grabby-head {
+    display: flex;
+    justify-content: space-between;
     font-family: 'Montserrat', sans-serif !important;
     font-weight: bold !important;
-    background-color: #1f2937;
-    color: #fff;
-    padding: 0.8rem;
+    background-color: #fff;
+    filter: drop-shadow(0 4px var(--black));
+    color: var(--black);
+    padding: 20px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
 }
 
 .image-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    padding: 105px 15px 15px 15px;
+    background-color: #F0F0F0;
 }
 
 .image-box {
     display: flex;
     justify-content: center;
-    background-color: lightgray;
+    color: var(--black);
+    padding: 15px 10px;
+    filter: drop-shadow(4px 4px var(--black));
+    border: 1px solid var(--black);
+    background-color: #fff;
     align-items: center;
-    width: 300px;
+    width: 100%;
     height: 300px;
-    max-width: 300px;
     max-height: 300px;
-    border: 1px solid red;
+    margin: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .collected-image {
@@ -48,5 +87,34 @@
 }
 
 .selected {
-    border: 5px solid blue;
+    outline: 5px solid var(--green);
+    filter: drop-shadow(4px 4px var(--black));
+}
+
+.grabby-head p{
+    font-size: 18px;
+}
+
+.btn{
+    border-radius: 5px;
+    color: var(--black);
+    padding: 15px 10px;
+    filter: drop-shadow(4px 4px var(--black));
+    border: 1px solid var(--black);
+    transition: all 0.1s ease-in-out;
+    font-weight: bold;
+}
+
+.btn:hover{
+    filter: drop-shadow(1px 1px var(--black));
+    transform: translate(1px,1px);
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #fff;
+}
+
+.btn-download {
+    background-color: var(--light-blue);
 }
