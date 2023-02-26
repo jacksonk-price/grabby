@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Grabby",
-    "description": "Description for the extension",
+    "description": "Grab and download all images on your current web page.",
     "version": "1.0",
     "permissions": ["activeTab", "scripting", "downloads"],
     "action": {
