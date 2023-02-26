@@ -8,6 +8,11 @@
         "default_title": "Grabby",
         "default_popup": "popup.html"
     },
+    "icons": { 
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png" 
+    },
     "content_scripts": [
         {
             "matches": ["<all_urls>"],

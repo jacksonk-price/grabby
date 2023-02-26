@@ -34,16 +34,17 @@
     min-height: 800px;
     font-family: 'Montserrat', sans-serif !important;
     font-weight: bold;
-    background-color: rgba(249, 250, 251);
+    background-color: var(--light-blue);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .grabby-head {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-family: 'Montserrat', sans-serif !important;
     font-weight: bold !important;
-    background-color: #f0fdfa;
+    background-color: var(--purple);
     filter: drop-shadow(0 4px var(--black));
     color: var(--black);
     padding: 20px;
@@ -60,7 +61,7 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
     padding: 105px 15px 15px 15px;
-    background-color: #e0f2fe;
+    background-color: var(--light-blue);
 }
 
 .image-box {
@@ -87,12 +88,19 @@
 }
 
 .selected {
-    outline: 5px solid var(--green);
+    outline: 5px solid var(--yellow);
     filter: drop-shadow(4px 4px var(--black));
 }
 
 .grabby-head p{
-    font-size: 18px;
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    color: var(--yellow);
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 2px 2px 0 #000;
+    line-height: 1.2;
 }
 
 .btn{
@@ -112,7 +120,7 @@
 }
 
 .btn-secondary {
-    background-color: #fff;
+    background-color: var(--yellow);
 }
 
 .btn-download {
