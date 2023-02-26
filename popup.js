@@ -26,7 +26,7 @@ const appendImageCountToDOM = (imageCount) => {
 const createImageBox = () => { 
   let div = document.createElement('div');
   div.addEventListener('click', function() {
-    selectBox(div);
+    toggleSelectBox(div);
   });
   div.classList.add("image-box");
 
@@ -41,19 +41,33 @@ const createImageElement = (src) => {
   return img;
 }
 
-const selectAll = () => {
-  let imageBoxes = document.querySelectorAll("div.image-box:not(.selected)");
+const toggleSelectAll = () => {
+  let unselectedImageBoxes = getUnSelectedBoxes();
 
-  for (let i = 0; i < imageBoxes.length; i++) {
-    imageBoxes[i].classList.toggle('selected');
+  if (unselectedImageBoxes.length > 0) {
+    for (let i = 0; i < unselectedImageBoxes.length; i++) {
+      toggleSelectBox(unselectedImageBoxes[i]);
+    }
+    updateSelectButtonText(true);
+  } else {
+    let selectedImageBoxes = getSelectedBoxes();
+    for (let i = 0; i < selectedImageBoxes.length; i++) {
+      toggleSelectBox(selectedImageBoxes[i]);
+    }
+    updateSelectButtonText(false);
   }
+  updateDownloadButton();
 }
 
-const selectBox = (imageBox) => {
-  if (imageBox.classList.contains('selected')){
-    imageBox.classList.remove('selected');
+const toggleSelectBox = (imageBox) => {
+  imageBox.classList.toggle('selected');
+  updateDownloadButton();
+
+  let unselectedImageBoxes = getUnSelectedBoxes();
+  if (unselectedImageBoxes.length > 0) {
+    updateSelectButtonText(false);
   } else {
-    imageBox.classList.add('selected');
+    updateSelectButtonText(false);
   }
 }
 
@@ -70,5 +84,34 @@ const downloadSelected = () => {
   }
 }
 
-document.getElementById('select-all').addEventListener('click', selectAll);
+const updateSelectButtonText = (boolSelectedAll) => {
+  const selectAllBtn = document.getElementById('select-all');
+  if (boolSelectedAll) {
+    selectAllBtn.innerHTML = "Deselect All";
+  } else {
+    selectAllBtn.innerHTML = "Select All";
+  }
+}
+
+const updateDownloadButton = () => {
+  const selectedBoxes = getSelectedBoxes();
+  const downloadBtn = document.getElementById('download-btn');
+
+  if (selectedBoxes.length > 0) {
+    downloadBtn.classList.remove('hide');
+    downloadBtn.innerHTML = `Download ${selectedBoxes.length} Images` 
+  } else {
+    downloadBtn.classList.add('hide');
+  }
+}
+
+const getSelectedBoxes = () => {
+  return document.querySelectorAll("div.image-box.selected");
+}
+
+const getUnSelectedBoxes = () => {
+  return document.querySelectorAll("div.image-box:not(.selected)");
+}
+
+document.getElementById('select-all').addEventListener('click', toggleSelectAll);
 document.getElementById('download-btn').addEventListener('click', downloadSelected);
