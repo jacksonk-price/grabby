@@ -9,4 +9,4 @@ Grabby is a Google Chrome extension that allows you to easily select and downloa
 5. Select and upload the extracted folder.
 6. You can now use Grabby. Make sure to refresh any existing pages or completely restart Chrome before using Grabby for the first time.
 
-![](https://imgur.com/taTeRry)
+![](https://i.imgur.com/taTeRry.png)
