@@ -1,20 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 :root{
-    --background: #fdffd6;
-    --red-sand: #f78c5e;
-    --red-sand-light: rgba(247,140,94,.99);
-    --green: #7be5ce;
-    --green-hover: #8ceddb;
     --yellow: #f8e14f;
     --purple: #b4acfb;
     --light-blue: #67e8f9;
     --black: #171717;
-    --dark-purple: #5d49f3;
-    --error: red;
-    --error-hover: #f33;
     --white: #fff;
-    --dark-blue: #0A2647;
 }
 
 *{
