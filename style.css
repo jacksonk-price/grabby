@@ -52,7 +52,7 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
     padding: 105px 15px 15px 15px;
-    background-color: var(--light-blue);
+    background-color: var(--white);
 }
 
 .image-box {
@@ -79,7 +79,7 @@
 }
 
 .selected {
-    outline: 5px solid var(--yellow);
+    outline: 5px solid var(--light-blue);
     filter: drop-shadow(4px 4px var(--black));
 }
 
