@@ -9,14 +9,14 @@
         "default_popup": "popup.html"
     },
     "icons": { 
-        "16": "/icons/grabby.png"
+        "16": "/icons/grabby.png",
+        "32": "/icons/grabby.png",
+        "48": "/icons/grabby.png"
     },
-    "content_scripts": [
-        {
+    "content_scripts": [{
             "matches": ["<all_urls>"],
             "js": ["content.js"]
-        }
-    ],
+        }],
     "web_accessible_resources": [{
         "resources": ["grabby.html"],
         "matches": ["<all_urls>"]
