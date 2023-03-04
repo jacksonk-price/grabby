@@ -3,11 +3,13 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === "getImages") {
         let imageUrls = [];
         for (let i = 0; i < images.length; i++) {
+          if (images[i].src !== '') {
             imageUrls.push(images[i].src);
+          }
         }
 
         let uniqueUrls = [...new Set(imageUrls)];
-    
+        
         sendResponse({ images: uniqueUrls });
     }
 });
