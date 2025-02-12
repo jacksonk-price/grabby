@@ -14,12 +14,6 @@
     box-sizing: border-box;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-}
-
 .grabby-container {
     min-width: 700px;
     min-height: 800px;
